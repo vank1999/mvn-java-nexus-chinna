@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git url: 'https://github.com/vank1999/chinna-app.git', branch: 'main'
+                git url: 'https://github.com/vank1999/mvn-java-nexus-chinna.git', branch: 'main'
             }
         }
          stage('build maven application') {
