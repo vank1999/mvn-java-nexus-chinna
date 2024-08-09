@@ -34,7 +34,7 @@ pipeline {
                            ], 
                            credentialsId: 'nexus-credentials',
                            groupId: 'in.javahome', 
-                           nexusUrl: '52.207.226.37:8081', 
+                           nexusUrl: '54.205.211.117:8081/', 
                            nexusVersion: 'nexus3', 
                            protocol: 'http', 
                            repository: 'chinna-app', 
@@ -46,10 +46,10 @@ pipeline {
             steps{
                 sshagent(['tomcat-credentials']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/hiring.war ubuntu@54.89.32.17:/opt/tomcat/webapps
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.89.32.17 'ls -l /opt/tomcat/webapps/hiring.war'
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.89.32.17 /opt/tomcat/bin/shutdown.sh
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.89.32.17 /opt/tomcat/bin/startup.sh
+                    scp -o StrictHostKeyChecking=no target/hiring.war ubuntu@54.242.157.51:/opt/tomcat/webapps
+                    ssh -o StrictHostKeyChecking=no ubuntu@54.242.157.51 'ls -l /opt/tomcat/webapps/hiring.war'
+                    ssh -o StrictHostKeyChecking=no ubuntu@54.242.157.51 /opt/tomcat/bin/shutdown.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@54.242.157.51 /opt/tomcat/bin/startup.sh
                    """
 
                 }
